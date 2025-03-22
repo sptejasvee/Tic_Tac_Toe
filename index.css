@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('https://source.unsplash.com/1600x900/?game,tic-tac-toe') no-repeat center center fixed;
+  background-size: cover;
+  background-color: lightsteelblue ;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure full screen height */
+}
+
+nav {
+  background-color: rgba(37, 9, 37, 0.8); /* Transparent background to let the background image show slightly */
+  color: white;
+  height: 65px;
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+nav .logo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: space-between;  /* Align game board to the left and info to the right */
+  align-items: center;
+  width: 80%;  /* Adjust width as per preference */
+  margin-top: 80px;  /* Leave space for the fixed navigation */
+  height: 80vh;  /* Limit height of the game container */
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+  position: relative;
+}
+
+.box {
+  border: 2px solid black;
+  font-size: 8vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.box:hover {
+  background-color: rgba(242, 234, 250, 0.7);
+}
+
+.info {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.gameInfo {
+  width: 35%;  /* Give a fixed width for the info area */
+  background-color: rgba(37, 9, 37, 0.7); /* Add transparency to blend with background */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameInfo h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.imgbox img {
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.line {
+  background-color: #911d91;
+  height: 3px;
+  width: 0;
+  position: absolute;
+  transition: width 1s ease-in-out;
+}
+
+#reset {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: #f3e7f9;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Baloo Bhaina 2';
+  font-size: 15px;
+  font-weight: bolder;
+  transition: background 0.3s ease;
+}
+
+#reset:hover {
+  background: #d1c2d4;
+}
+
+@media screen and (max-width: 950px) {
+  .gameContainer {
+    flex-direction: column;  /* Stack the game board and info vertically on smaller screens */
+    align-items: center;
+    width: 90%;  /* Adjust width for mobile */
+  }
+
+  .gameBoard {
+    grid-template-columns: repeat(3, 20vw);
+    grid-template-rows: repeat(3, 20vw);
+    margin-bottom: 20px;
+  }
+
+  .gameInfo {
+    width: 90%;  /* Make game info width 100% on smaller screens */
+  }
+
+  .gameInfo h1 {
+    font-size: 1.5rem;
+  }
+}
